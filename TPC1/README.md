@@ -5,4 +5,4 @@
 - Nome: Letícia Freitas Lopes
 - Número: A114777
 - Foto:
-  ![to.jpg
+  ![Foto](Captura de ecrã 2026-09-23 ng
