@@ -15,8 +15,9 @@ Neste trabalho utilizei o Blockly Games para criar um desenho de um barco à vel
 
 
 ## Resultados
-Maze - https://blockly.games/maze?lang=en&level=10&&skin=0#p8eh74
+Maze - https://blockly.games/maze?lang=en&level=10&&skin=0#9ccmy9
 
+![Foto](foto3.png)
 
 Barco - https://blockly.games/turtle?lang=en&level=10#hhvp22
 
