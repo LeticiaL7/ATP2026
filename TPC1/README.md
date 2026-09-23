@@ -6,4 +6,4 @@
 - Número: A114777
 - Foto:
 
-![Foto](foto.png
+!(foto.png)
