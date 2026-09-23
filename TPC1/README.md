@@ -20,5 +20,8 @@ Maze - https://blockly.games/maze?lang=en&level=10&&skin=0#p8eh74
 
 Barco - https://blockly.games/turtle?lang=en&level=10#hhvp22
 
+![Foto](foto 1.png)
+![Foto](foto 2.png)
+
 
 
