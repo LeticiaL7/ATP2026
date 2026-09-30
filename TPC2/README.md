@@ -10,7 +10,7 @@
 
 
 ## Resumo
-O objetivo era criar um programa em Python para jogar o jogo "Adivinha o número". Eu utilizei a modalidade do computadore escolher um número aleatório e o utilizador tentar adivinhar. Quando acertar, é imprimido o número de tentativas.
+O objetivo era criar um programa em Python para jogar o jogo "Adivinha o número". Eu utilizei a modalidade do computador escolher um número aleatório e o utilizador tentar adivinhar. Quando acertar, é imprimido o número de tentativas.
 ## Resultados
 
 ![Foto](Jogo1.png)
