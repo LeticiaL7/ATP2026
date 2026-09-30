@@ -1,4 +1,4 @@
-# TPC1 - Jogo "Adivinha o número"
+# TPC2 - Jogo "Adivinha o número"
  
 ## Autor
  
@@ -10,3 +10,9 @@
 
 
 ## Resumo
+
+## Resultados
+
+
+
+
