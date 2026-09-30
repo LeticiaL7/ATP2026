@@ -13,7 +13,7 @@
 
 ## Resultados
 
-![Foto](jogo1.png)
+![Foto](Jogo 1.png)
 
 
 
