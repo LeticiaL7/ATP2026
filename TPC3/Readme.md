@@ -10,7 +10,7 @@
 
 
 ## Resumo
-O objetivo era criar um programa em Python para jogar o jogo "Corrida para o 100". O objetivo era o jogador e o computador  jogarem alternadamente somando um número de 1 a 10 ao total. Sendo o computador a jogar primeiro vence sempre (1), sendo o jogador, só ganhará dependendo das jogadas que um e outro fizerem (2).
+O objetivo era criar um programa em Python para jogar o jogo "Corrida para o 100". O jogo baseia-se em turnos alternados entre o jogador e o computador, sendo que cada um adiciona um número de 1 a 10 ao total. Sendo, em primeiro lugar, o computador a jogar, vence sempre (1). Sendo o jogador, só ganhará dependendo das jogadas que um e outro fizerem (2).
 ## Resultados
 
 (1) ![TPC3](TPC3)
