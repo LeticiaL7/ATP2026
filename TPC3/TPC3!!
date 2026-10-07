@@ -1,0 +1,68 @@
+i=0
+
+jogador= int(input("Introduz um número de 1 a 10:"))
+i=jogador
+
+if jogador == 1:
+ computador = 11-jogador
+ print ("Agora é a vez do computador jogar:", computador)
+else:
+ computador = 12 - i
+ print ("Agora é a vez do computador jogar:", computador)
+
+i = i + computador
+print ("Total=", i)
+
+vencedor = ""
+
+while i <100:
+
+    jogador= int(input("Insere um número de 1 a 10:"))
+    i= i + jogador
+    if i >= 100:
+     vencedor = "jogador"
+    
+    else:
+        if i!=12 and i!= 23 and i!= 34 and i!= 45 and i!= 56 and i!=67 and i!=78 and i!=89 and i!=100:
+
+         if 12<i<23:
+            computador = 23-i
+
+         elif 23<i<34:
+            computador=34-i
+
+         elif 34<i<45:
+            computador=45-i
+
+         elif 45<i<56:
+            computador=56-i
+
+         elif 56<i<67:
+            computador=67-i
+
+         elif 67<i<78:
+            computador=78-i
+
+         elif 78<i<89:
+            computador=89-i
+
+         elif 89<i<100:
+            computador=100-i
+      
+    
+        else:
+         computador = 11 - jogador
+
+        i = i + computador
+        print("Agora é a vez do computador jogar:", computador)
+        print("Total=", i)
+        if i >= 100:
+         vencedor = "computador"    
+
+if vencedor == "jogador":
+ print("Total=", i)
+ print("O jogador venceu!")
+ 
+else:
+ print("O computador venceu!") 
+ 
