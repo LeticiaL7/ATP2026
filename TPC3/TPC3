@@ -1,0 +1,22 @@
+i=0
+
+computador=1
+i=1 
+print ("O computador joga:", computador)
+
+print ("Total=", i)
+
+while i<100:
+    jogador= int(input("Joga um número de 1 a 10:"))
+
+    i = i + jogador
+    print ("Total = ", i)
+
+    computador = 11 - jogador
+    print("O computador joga:", computador)
+    
+    i = i + computador
+
+if i==100:
+        print ("Total= ",i)
+        print ("O computador ganhou!")
