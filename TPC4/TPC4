@@ -1,0 +1,152 @@
+lista = []
+
+print ("Bem vindo ao menu! Escolha o que pretende fazer!")
+print ("(1) Criar Lista")
+print ("(2) Ler Lista")
+print ("(3) Soma")
+print ("(4) Média")
+print ("(5) Maior")
+print ("(6) Menor")
+print ("(7) estaOrdenada por ordem crescente")
+print ("(8) estaOrdenada por ordem decrescente")
+print ("(9) Procura um elemento")
+print ("(0) Sair")
+
+opcao = int (input ("Escolha uma opção: "))
+
+while opcao != 0 :
+    if opcao == 1:
+        import random
+        lista = []
+        
+        quantidade = int (input("Quantos números quer na lista? "))
+        i=0
+
+        while i < quantidade: 
+
+          lista.append (random.randint(1,100))
+          i = i + 1
+    
+        print(lista)
+        opcao = int (input ("Bem vindo ao menu! Escolha uma opção: "))
+
+    if opcao == 2:
+       lista = []
+       
+       quantidade = int (input("Quantos números quer na lista? "))
+       i=0
+       
+       while i < quantidade: 
+         numero = int(input("Introduza um número: "))
+         lista.append (numero)
+         i = i + 1
+           
+       print(lista)
+       opcao = int (input ("Bem vindo ao menu! Escolha uma opção: "))
+
+    if opcao == 3: 
+        
+        res = 0
+        i = 0
+
+        while i < len (lista):
+          res = res + lista [i]
+          i = i + 1
+    
+        print (res) 
+        opcao = int (input ("Bem vindo ao menu! Escolha uma opção: "))
+
+    if opcao == 4:
+
+       res = 0
+
+       for n in lista:
+          res = res + n
+          media = res / len (lista)
+          
+       
+       print (media)
+       opcao = int (input ("Bem vindo ao menu! Escolha uma opção: "))
+
+    if opcao == 5:
+
+       res = 0
+
+       for n in lista:
+          if n > res:
+             res = n
+       
+       print (res)
+       opcao = int (input ("Bem vindo ao menu! Escolha uma opção: "))
+
+    if opcao == 6:
+
+      res = lista [0]
+      i = 0
+
+      while i < len (lista):
+         if lista [i] < res:
+            res = lista [i]
+         
+         i = i + 1
+
+      print (res)
+      opcao = int (input ("Bem vindo ao menu! Escolha uma opção: "))
+
+    if opcao == 7:
+
+       i = 0
+       sim = True
+       
+       while i < len (lista) - 1 and sim:
+          if lista [i] > lista [i + 1]:
+             sim = False
+          i = i + 1
+
+       if sim:    
+          print ("Sim")
+       else:
+          print ("Não")
+       
+       opcao = int (input ("Bem vindo ao menu! Escolha uma opção: "))
+
+    if opcao == 8:
+   
+          i = 0
+          sim = True
+          
+          while i < len (lista) - 1 and sim:
+             if lista [i] < lista [i + 1]:
+                sim = False
+             i = i + 1
+   
+          if sim:    
+             print ("Sim")
+          else:
+             print ("Não")
+          
+          opcao = int (input ("Bem vindo ao menu! Escolha uma opção: "))
+
+    if opcao == 9:
+       
+       elemento = int (input("Introduz o número que queres que procure: "))
+       i = 0
+       encontrou = False
+
+       while i < len (lista):
+             if lista [i] == elemento:
+              print (i)
+              encontrou = True
+           
+             i = i +1
+
+       if encontrou == False:
+         print (-1)
+       
+if opcao == 0:
+   print (lista)
+   print ("Saiu da aplicação!")
+       
+
+
+      
