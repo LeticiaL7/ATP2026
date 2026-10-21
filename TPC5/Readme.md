@@ -10,7 +10,7 @@
 
 
 ## Resumo
-O objetivo era criar uma aplicação em Python com um menu que permite criar uma turma, listá-la, inserir um aluno, consultá-lo por ID, guardar a turma em ficheiro e carregá-la a partir desse mesmo e sair da aplicação. Até ser escolhida a opção "Sair (0)", o programa continua a executar.
+O objetivo era criar uma aplicação em Python com um menu que permite criar uma turma, listá-la, inserir um aluno, consultá-lo por ID, guardar a turma em ficheiro, carregá-la a partir desse mesmo e sair da aplicação. Até ser escolhida a opção "Sair (0)", o programa continua a executar.
 
 ## Resultados
 
