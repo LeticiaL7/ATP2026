@@ -1,0 +1,100 @@
+turma = []
+
+
+print ("(1) Criar turma")
+print ("(2) Inserir um aluno na turma")
+print ("(3) Listar a turma")
+print ("(4) Consultar um aluno por ID")
+print ("(8) Guardar a turma em ficheiro")
+print ("(9) Carregar uma turma dum ficheiro")
+print ("(0) Sair da aplicação")
+
+opcao = int (input ("Escolha uma opção: "))
+
+while opcao != 0:
+    
+    if opcao == 1:
+        turma = []
+                
+        quantidade = int (input("Quantos alunos quer na turma? "))
+        i=0
+        
+        while i < quantidade: 
+        
+             nome = input("Nome: ")
+             idaluno = input("ID: ")
+             notaTPC = float(input("Nota TPC: "))
+             notaProj = float(input("Nota Projeto: "))
+             notaTeste = float(input("Nota Teste: "))
+        
+             aluno = (nome, idaluno, [notaTPC, notaProj, notaTeste])
+             turma.append(aluno)
+
+             i = i + 1
+        
+        print (turma)
+        opcao = int (input ("Bem vindo ao menu! Escolha uma opção: "))
+
+    elif opcao == 2:
+        nome = input("Nome: ")
+        idaluno = input("ID: ")
+        notaTPC = float(input("Nota TPC: "))
+        notaProj = float(input("Nota Projeto: "))
+        notaTeste = float(input("Nota Teste: "))
+        
+        aluno = (nome, idaluno, [notaTPC, notaProj, notaTeste])
+        turma.append(aluno)
+        opcao = int (input ("Bem vindo ao menu! Escolha uma opção: "))
+
+    elif opcao == 3:
+        for aluno in turma:
+            print (aluno)
+
+        opcao = int (input ("Bem vindo ao menu! Escolha uma opção: "))
+
+    elif opcao == 4 :
+        idaluno = input ("Qual o ID do aluno que pretende consultar?")
+        encontrado = False
+        
+        for aluno in turma:
+           if aluno [1] == idaluno:
+              print ("Nome:" ,aluno[0]) 
+              print ("ID:" ,aluno[1])
+              print ("Notas:" , aluno[2])
+              encontrado = True
+        
+       
+        if encontrado == False:
+         print ("Aluno não encontrado")
+
+        opcao = int (input ("Bem vindo ao menu! Escolha uma opção: "))
+        
+    elif opcao == 8:
+
+        fout = open("turma.csv", "w")
+
+        fout.write("Nome;Id;notaTPC;notaProj;notaTeste\n")
+
+        for aluno in turma:
+         aluno = (f"{aluno[0]};{aluno[1]};{aluno[2][0]};{aluno[2][1]};{aluno[2][2]}\n")
+         fout.write(aluno)
+
+        fout.close()
+
+        print("Turma guardada com sucesso.")
+        print (turma)
+        opcao = int (input ("Bem vindo ao menu! Escolha uma opção: "))
+ 
+    elif opcao == 9:
+
+     f4 = open("turma.csv")
+    
+     print(f4.read())
+
+     opcao = int(input("Bem vindo ao menu! Escolha uma opção: "))
+
+        
+
+    
+print("Aplicação terminada.")
+
