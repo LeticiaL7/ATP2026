@@ -1,0 +1,164 @@
+tabMeteo1 = [((2022,1,20), 2, 16, 0),((2022,1,21), 1, 13, 0.2), ((2022,1,22), 7, 17, 0.01)]
+
+
+import matplotlib.pyplot as plt
+
+def medias(tabMeteo):
+    res = []
+    for x in tabMeteo:
+        Data, TempMin,TempMax,*_ = x
+        media = (TempMax + TempMin) / 2
+        #tem de ter o append se nao  so vai ler o ultimo
+        res.append((Data, media))
+    return res
+
+def guardaTabMeteo(t, fnome):
+    file = open(fnome,"w")
+    for data, tmin, tmax, p in t:
+    #for(ano,mes,dia),tmin,tmax,p int:
+        ano, mes, dia = data
+        file.write(f"{ano}--{mes}--{dia}|{tmin}|{tmax}|{p}\n")    
+    file.close()
+    return
+
+def carregaTabMeteo(fnome):
+    res = []
+    file = open(fnome,"r")
+    for linha in file:
+        campos = linha.split("|") #data,tmin,tmax,p=line.split("|")
+        d = campos[0].split("--")#ano,mes,dia = data.split("-")
+        data = (int(d[0]), int(d[1]), int(d[2]))    
+        res.append((data,float(campos[1]),float(campos[2]),float(campos[3])))
+        #res.append((int(ano),int(mes),int(dia)),float(tmin),float(tmax),float(p))
+    file.close()
+    return res
+
+def minMin(tabMeteo):
+    minima = tabMeteo [0][1]
+    for x in tabMeteo:
+        Data,TempMin,*_ = x
+        if TempMin < minima: #posso usar x[1] em vez de TempMin
+            minima = TempMin
+    return minima
+
+def amplTerm(tabMeteo):
+    res = []
+    for x in tabMeteo:
+        Data,TempMin,TempMax,*_ = x
+        amplitude = (TempMax - TempMin)
+        res.append((Data,amplitude))
+    return res 
+
+def maxChuva(tabMeteo):
+    max_prec = tabMeteo [0][3]
+    max_data = tabMeteo [0][0]
+    for x in tabMeteo:
+        data,TempMin,TempMax,p =x
+        if p > max_prec:
+            max_prec = p
+            max_data = data
+
+    return (max_data, max_prec)
+
+def diasChuvosos(tabMeteo, p):
+    lista =[]
+    
+    for x in tabMeteo:
+        data,TempMin,TempMax,prec =x
+        if prec > p:
+            lista.append((data,prec))
+
+    return lista
+
+def maxPeriodoCalor(tabMeteo, p):
+    res = 0
+    i = 0 #contador
+    for x in tabMeteo:
+        data,TempMin,TempMax,prec = x
+        if prec < p:
+            i = i + 1
+            if i > res:
+                res = i
+        else:
+            i = 0
+    return res
+
+def grafTabMeteo(t):
+    y_min = [tmin for data, tmin, *_ in t]
+    y_max = [tmax for data, tmin, tmax, *_ in t]
+    y_prec = [p for data, tmin,tmax, p in t]
+    x = [f"{data[0]} - {data[1]} - {data[2]}" for data, *_ in t]
+
+    plt.plot(x,y_min, color="red", marker = "o", label = "Temperatura mínima ºC")
+    plt.plot(x,y_max, color="green", marker = "o", label = "Temperatura máxima ºC")
+    plt.title("Tabela Meteorológica")
+    plt.xticks(rotation = 45)
+    plt.grid()
+    plt.legend()
+    plt.show()
+
+    plt.bar(x,y_prec, color="c", label = "Precipitação (mm)")  #nao tem marker porque só existe em gráficos de linhas e este e de barras
+    plt.title("Pluviosidade")
+    plt.xticks(rotation=45)
+    plt.grid()
+    plt.legend()
+    plt.show()
+    
+    return
+
+
+print ("Bem vindo ao menu! Escolha o que pretende fazer!")
+print("(1) Temperaturas Médias")
+print("(2) Guardar tabela metereológica")
+print("(3) Carregar tabela metereológica")
+print("(4) Temperatura minima mais baixa registada")
+print("(5) Amplitude térmica de cada dia")
+print("(6) Dia com precipitação máxima")
+print("(7) Dias com precipitação superior a um valor")
+print("(8) Maior período de dias com precipitação inferior a um limite")
+print("(9) Gráficos de temperatura mínima, máxima e pluviosidade")
+print("(0) Sair")
+
+opcao = int (input ("Escolha uma opção:"))
+
+tabMeteo = tabMeteo1
+
+while opcao != 0:
+   
+    if opcao == 1:
+     print(medias(tabMeteo))
+    
+    if opcao == 2:
+     nome_saida = input("Nome do ficheiro que quer guardar: ")
+     guardaTabMeteo(tabMeteo, nome_saida)
+     print("Tabela guardada com sucesso!")
+    
+    if opcao == 3:
+     nome_entrada = input("Nome do ficheiro a carregar: ")
+     tabMeteo = carregaTabMeteo(nome_entrada)
+     print("Tabela carregada com sucesso!")
+     print(tabMeteo)
+
+    if opcao == 4:
+     print(minMin(tabMeteo))
+
+    if opcao == 5:
+     print(amplTerm(tabMeteo))
+
+    if opcao == 6:
+     print(maxChuva(tabMeteo))
+
+    if opcao == 7:
+     p = float(input("Limite de precipitação: "))
+     print(diasChuvosos(tabMeteo, p))
+
+    if opcao == 8:
+     p = float(input("Limite de precipitação: "))
+     print(maxPeriodoCalor(tabMeteo, p))
+
+    if opcao == 9:
+     grafTabMeteo(tabMeteo)
+     
+    opcao = int(input("Escolha uma opção: "))
+
+print ("Saiu da aplicação")
