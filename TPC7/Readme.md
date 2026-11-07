@@ -14,5 +14,5 @@ O objetivo era aplicar os conhecimentos de Python na resolução de problemas en
 
 ## Resultados
 
-![TPC6](TPC6!)
+![TPC7](TPC7.ipynb)
 
