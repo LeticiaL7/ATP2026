@@ -97,7 +97,7 @@ def grafTabMeteo(t):
     plt.legend()
     plt.show()
 
-    plt.bar(x,y_prec, color="c", label = "Precipitação (mm)")  #nao tem marker porque só existe em gráficos de linhas e este e de barras
+    plt.bar(x,y_prec, color="c", label = "Precipitação (mm)")  
     plt.title("Pluviosidade")
     plt.xticks(rotation=45)
     plt.grid()
